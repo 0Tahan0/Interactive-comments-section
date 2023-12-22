@@ -1,7 +1,7 @@
 let commentsArray = [
   {
     id: 1234,
-    imgSrc: "../images/avatars/image-amyrobson.png",
+    imgSrc: "./images/avatars/image-amyrobson.png",
     ownerName: "amyrobson",
     date: "1 month ago",
     postText:
@@ -14,7 +14,7 @@ let commentsArray = [
   },
   {
     id: 12345,
-    imgSrc: "../images/avatars/image-maxblagun.png",
+    imgSrc: "./images/avatars/image-maxblagun.png",
     ownerName: "maxblagun",
     date: "2 weeks ago",
     postText:
@@ -26,7 +26,7 @@ let commentsArray = [
     replies: [
       {
         id: 123456,
-        imgSrc: "../images/avatars/image-ramsesmiron.png",
+        imgSrc: "./images/avatars/image-ramsesmiron.png",
         ownerName: "ramsesmiron",
         date: "1 week ago",
         postText:
@@ -38,7 +38,7 @@ let commentsArray = [
         replies: [
           {
             id: 123457,
-            imgSrc: "../images/avatars/image-juliusomo.png",
+            imgSrc: "./images/avatars/image-juliusomo.png",
             ownerName: "juliusomo",
             date: "2 days ago",
             postText:
@@ -55,7 +55,7 @@ let commentsArray = [
   },
 ];
 
-let userImg = "../images/avatars/image-juliusomo.png";
+let userImg = "./images/avatars/image-juliusomo.png";
 let userName = "juliusomo";
 const commentsContainer = document.querySelector(".posts .container");
 const boardText = document.querySelector("#board-text");
