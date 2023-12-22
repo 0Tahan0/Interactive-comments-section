@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- normalize file -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- icons file -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Frontend Mentor | Interactive comments section</title>
+  </head>
+  <body>
+    <!-- ----------------------------------------- -->
+    <div class="all-content bg-light">
+      <!-- Alert -->
+    <div class="modal fade" id="modal-alert">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content p-4">
+            <h2 id="alertTitle"></h2>
+            <p class="my-4 fs-5" id="alertContent"></p>
+            <div class="btns-box d-flex justify-content-between">
+              <button
+                class="btn main-btn-black text-uppercase px-5 py-3"
+                data-bs-dismiss="modal"
+                id="refuse"
+              ></button>
+              <button
+                class="btn main-btn-red text-uppercase px-5 py-3"
+                data-bs-dismiss="modal"
+                id="accept"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Alert -->
+
+      <!-- posts starting -->
+      <div class="posts">
+        <div class="container">
+          <!-- ------------------ -->
+          <!-- Posts from JS file -->
+          <!-- ------------------ -->
+        </div>
+      </div>
+      <div class="writing-board-box position-sticky bottom-0 start-0">
+        <div class="container">
+          <div
+            class="inner-board-box row align-items-start justify-content-around py-3 px-2 shadow-lg bg-white rounded-4"
+          >
+            <div class="col-6 col-md-2 order-md-1">
+              <img
+                src="images/avatars/image-juliusomo.png"
+                alt="user img"
+                class="img-fluid rounded-pill"
+              />
+            </div>
+            <!-- <input
+              type="text"
+              
+              id="board-text"
+              placeholder="Add a comment..."
+              
+            /> -->
+            <textarea name="" id="board-text" placeholder="Add a comment" class="main-input col-12 col-md-6 order-first order-md-2 fs-4 rounded   mb-4">
+
+            </textarea>
+            
+            <button
+              class="btn main-btn fs-5 col-6 col-md-2 order-md-3 p-3"
+              id="send-post-btn"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------------------------------ -->
+    <script src="js/index.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/tes.js"></script> -->
+  </body>
+</html>
