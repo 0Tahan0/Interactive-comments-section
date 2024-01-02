@@ -61,7 +61,10 @@ const commentsContainer = document.querySelector(".posts .container");
 const boardText = document.querySelector("#board-text");
 const sendBtn = document.querySelector("#send-post-btn");
 
-sendBtn.onclick = () => createComment(boardText.value);
+sendBtn.onclick = () => {
+  createComment(boardText.value);
+  boardText.value = "";
+};
 
 addToHtml(commentsArray, commentsContainer);
 postsEvents(commentsArray);
@@ -92,6 +95,7 @@ function addToHtml(arr, box, repTag = null) {
     htmlStyle = createHtml(el, repTag);
     el.htmlStyle = htmlStyle;
     box.appendChild(htmlStyle);
+
     if (el.replies != null)
       addToHtml(
         el.replies,
@@ -141,13 +145,13 @@ function createHtml(_comment, repTag) {
               </p>
             </div>
             <div
-              class="counter-box col-md-1 col-5 order-3 order-md-first d-md-block d-flex justify-content-between bg-light p-2 rounded  text-center"
+              class="counter-box col-md-1 col-5 order-3 order-md-first d-md-block d-flex justify-content-between bg-light p-2 rounded  text-center align-items-center"
             
               >
-              <button class="btn border-0 plus"><i class="fa-solid fa-plus"></i></button>
-              <div class="counter fs-4">${_comment.counterLikes}</div>
+              <button class="btn border-0 plus"><i class="fa-solid fa-plus fa-xs"></i></button>
+              <div class="counter fs-6">${_comment.counterLikes}</div>
               <button class="btn border-0 minus">
-                <i class="fa-solid fa-minus"></i>
+                <i class="fa-solid fa-minus fa-xs"></i>
               </button>
             </div>
             
@@ -244,22 +248,22 @@ function changerCounter(plus, minus, counter, currentVal, amount) {
   ) {
     if (amount > 0) {
       counter.classList.add("counterInc");
-      plus.setAttribute("disabled", "true");
+      set_remove_Attr(plus, "disabled");
     } else {
       counter.classList.add("counterDec");
-      minus.setAttribute("disabled", "true");
+
+      set_remove_Attr(minus, "disabled");
     }
   } else if (plus.hasAttribute("disabled") == true && amount < 0) {
     counter.classList.remove("counterInc");
-
-    plus.removeAttribute("disabled");
+    set_remove_Attr(plus, "disabled", "remove");
   } else if (minus.hasAttribute("disabled") == true && amount > 0) {
     counter.classList.remove("counterDec");
-
-    minus.removeAttribute("disabled");
+    set_remove_Attr(minus, "disabled", "remove");
   }
 
   counter.textContent = (currentVal + amount).toString();
+
   return parseInt(counter.textContent);
 }
 
@@ -373,10 +377,10 @@ function addReply(el) {
         el.ownerName
       );
 
-       set_remove_Attr(replies_Btns, "disabled","remove");
-       set_remove_Attr(edit_btns, "disabled", "remove");
-       set_remove_Attr(delete_btns, "disabled", "remove");
-       set_remove_Attr(sendBtn, "disabled", "remove");
+      set_remove_Attr(replies_Btns, "disabled", "remove");
+      set_remove_Attr(edit_btns, "disabled", "remove");
+      set_remove_Attr(delete_btns, "disabled", "remove");
+      set_remove_Attr(sendBtn, "disabled", "remove");
       el.replies.push(comment);
       postsEvents(commentsArray);
     }
